@@ -64,11 +64,26 @@
   [resetButton setTintColor:[UIColor colorWithRed:0.694 green:0.184 blue:0.196 alpha:1]];
   [resetButton setAnchor:CGPointMake(200, 250)];
   [self.view addSubview:resetButton];
+
+  
+  MAConfirmButton *confirmlessButton = [MAConfirmButton buttonWithTitle:@"Confirmless" confirm:nil];
+  [confirmlessButton addTarget:self action:@selector(showAlert) forControlEvents:UIControlEventTouchUpInside];
+  [confirmlessButton setTintColor:[UIColor colorWithRed:0.439 green:0.741 blue:0.314 alpha:1.]];
+  [confirmlessButton setAnchor:CGPointMake(200, 300)];
+  [self.view addSubview:confirmlessButton];
+
   
 }
 
 - (void)resetUI{
   [self setupView];
+}
+
+- (void)showAlert{
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Button tapped" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+  
+  [alertView show];
+  [alertView release];
 }
 
 - (void)confirmAction:(id)sender{
