@@ -349,7 +349,7 @@ static NSLock *crayolaNameCacheLock;
 	if (h > 360.f) h -= 360.0f;
 	
 	// Create a color in RGB
-	return [UIColor colorWithHue:h saturation:s brightness:v alpha:a];
+	return [UIColor newColorWithHue:h saturation:s brightness:v alpha:a];
 }
 
 // Pick two colors more colors such that all three are equidistant on the color wheel
@@ -540,7 +540,7 @@ static NSLock *crayolaNameCacheLock;
 	return crayolaNameCache;
 }
 
-+ (UIColor *)colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness alpha:(CGFloat)alpha {
++ (UIColor *)newColorWithHue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness alpha:(CGFloat)alpha {
 	// Convert hsb to rgb
 	CGFloat r,g,b;
 	[self hue:hue saturation:saturation brightness:brightness toRed:&r green:&g blue:&b];
