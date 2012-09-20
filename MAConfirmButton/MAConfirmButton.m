@@ -272,7 +272,7 @@
 }
 
 - (void)setTintColor:(UIColor *)color{
-    self.tint = [UIColor colorWithHue:color.hue saturation:color.saturation+0.15 brightness:color.brightness alpha:1];
+    self.tint = [UIColor newColorWithHue:color.hue saturation:color.saturation+0.15 brightness:color.brightness alpha:1];
     colorLayer.backgroundColor = tint.CGColor;
     [self setNeedsDisplay];
 }
