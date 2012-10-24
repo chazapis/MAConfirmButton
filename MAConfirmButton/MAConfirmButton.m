@@ -52,7 +52,7 @@
 - (id)initWithDisabledTitle:(NSString *)disabledString{
     self = [super initWithFrame:CGRectZero];
     if(self != nil){
-        disabled = [disabledString retain];
+        self.disabled = disabledString;
 
         toggleAnimation = MAConfirmButtonToggleAnimationLeft;
 
@@ -82,8 +82,8 @@
 - (id)initWithTitle:(NSString *)titleString confirm:(NSString *)confirmString{
     self = [super initWithFrame:CGRectZero];
     if(self != nil){
-        self.title = [titleString retain];
-        self.confirm = [confirmString retain];
+        self.title = titleString;
+        self.confirm = confirmString;
 
         toggleAnimation = MAConfirmButtonToggleAnimationLeft;
 
@@ -260,7 +260,7 @@
 }
 
 - (void)disableWithTitle:(NSString *)disabledString{
-    self.disabled = [disabledString retain];    
+    self.disabled = disabledString;
     [self toggle];	
 }
 
